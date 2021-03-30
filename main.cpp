@@ -190,7 +190,7 @@ void DBNet::unclip(const vector<Point2f>& inPoly, vector<Point2f> &outPoly)
 int main()
 {
     DBNet mynet(0.3, 0.5, 2.0, 200);
-    string imgpath = "D:/AI-2021/license-plate-detect-recoginition/license-plate-detect-recoginition-opencv/7.jpg";
+    string imgpath = "7.jpg";
     Mat srcimg = imread(imgpath);
     mynet.detect(srcimg);
 
