@@ -135,7 +135,7 @@ class dbnet:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='RetinaPL')
-    parser.add_argument('--imgpath', default='/home/wangbo/Desktop/data/yolo/license-plate-detect-recoginition/License-Plate-Detector-master/imgs/3.jpg', type=str, help='image path')
+    parser.add_argument('--imgpath', default='imgs/3.jpg', type=str, help='image path')
     parser.add_argument('--binaryThreshold', default=0.3, type=float, help='binary Threshold')
     parser.add_argument('--polygonThreshold', default=0.5, type=float, help='polygon Threshold')
     parser.add_argument('--unclipRatio', default=2.0, type=float, help='unclip Ratio')
