@@ -101,7 +101,14 @@ void DBNet::detect(Mat& srcimg)
         results.push_back(polygon);
     }
     confidences = vector<float>(contours.size(), 1.0f);
-    polylines(srcimg, results, true, Scalar(0, 255, 0), 2);
+    //polylines(srcimg, results, true, Scalar(0, 255, 0), 2);
+	for (int i = 0; i < results.size(); i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			circle(srcimg, Point((int)results[i][j].x, (int)results[i][j].y), 2, Scalar(0, 0, 255), -1);
+		}
+	}
 }
 
 // According to https://github.com/MhLiao/DB/blob/master/structure/representers/seg_detector_representer.py (2020-10)
@@ -183,7 +190,7 @@ void DBNet::unclip(const vector<Point2f>& inPoly, vector<Point2f> &outPoly)
 int main()
 {
     DBNet mynet(0.3, 0.5, 2.0, 200);
-    string imgpath = "/home/wangbo/Desktop/data/yolo/license-plate-detect-recoginition/License-Plate-Detector-master/imgs/3.jpg";
+    string imgpath = "D:/AI-2021/license-plate-detect-recoginition/license-plate-detect-recoginition-opencv/7.jpg";
     Mat srcimg = imread(imgpath);
     mynet.detect(srcimg);
 
